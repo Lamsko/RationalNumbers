@@ -127,10 +127,10 @@ RationalNumber operator+(const RationalNumber & a, const RationalNumber & b)
 	return temp;
 }
 
-RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
+/*RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
 {
-	return a + (-b);
-}
+	return (a + (-b));
+}*/
 
 RationalNumber operator*(const RationalNumber & a, const RationalNumber & b)
 {
