@@ -77,6 +77,8 @@ void simplifyF(int& a, int& b)
 
 RationalNumber::RationalNumber()
 {
+	setNumerator(0);
+	setDenominator(1);
 }
 
 
@@ -154,6 +156,21 @@ bool operator<=(const RationalNumber & a, const RationalNumber & b)
 bool operator>=(const RationalNumber & a, const RationalNumber & b)
 {
 	return ( (a > b) || (a == b));
+}
+
+ostream & operator<<(ostream & out, const RationalNumber & obj)
+{
+	out << obj.numerator;
+	if (obj.numerator != 0 && obj.denominator != 1)
+	{
+		out << "/" << obj.denominator;
+	}
+	return out;
+}
+
+istream & operator>>(istream & in, RationalNumber & obj)
+{
+	// TODO: insert return statement here
 }
 
 void RationalNumber::setNumerator(int num)
