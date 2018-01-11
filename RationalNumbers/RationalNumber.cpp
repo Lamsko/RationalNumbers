@@ -120,3 +120,12 @@ int RationalNumber::getDenominator() const
 {
 	return denominator;
 }
+
+void RationalNumber::simplify()
+{
+	int tempN = numerator;
+	int tempD = denominator;
+	simplifyF(tempN, tempD);
+	setNumerator(tempN);
+	setDenominator(tempD);
+}
