@@ -101,6 +101,27 @@ RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
 	return a + (-b);
 }
 
+RationalNumber operator*(const RationalNumber & a, const RationalNumber & b)
+{
+	RationalNumber temp;
+	RationalNumber temp_2(b.getNumerator(), a.getDenominator());
+	RationalNumber temp_3(a.getNumerator(), b.getDenominator());
+	int a1 = temp_2.getDenominator();
+	int b1 = temp_2.getNumerator();
+	int a2 = temp_3.getDenominator();
+	int b2 = temp_3.getNumerator();
+	temp.setNumerator(b1*b2);
+	temp.setDenominator(a1*a2);
+	return temp;
+}
+
+RationalNumber operator/(const RationalNumber & a, const RationalNumber & b)
+{
+	RationalNumber temp_1(a.getNumerator(), a.getDenominator());
+	RationalNumber temp_2(b.getNumerator(), b.getDenominator());
+	return temp_1 * temp_2;
+}
+
 void RationalNumber::setNumerator(int num)
 {
 	numerator = num;
