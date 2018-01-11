@@ -93,12 +93,12 @@ RationalNumber operator+(const RationalNumber & a, const RationalNumber & b)
 	temp.setDenominator(a.getDenominator() * tempRD);
 	temp.setNumerator(a.getNumerator() * tempRD + b.getNumerator() * tempLD);
 	temp.simplify();
-	return RationalNumber();
+	return temp;
 }
 
 RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
 {
-	return RationalNumber();
+	return a + (-b);
 }
 
 void RationalNumber::setNumerator(int num)
