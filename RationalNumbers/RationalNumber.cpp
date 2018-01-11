@@ -34,7 +34,7 @@ void getFactors(int num, vector<int>& factorSet)
 	}
 }
 
-void simplify(int& a, int& b)
+void simplifyF(int& a, int& b)
 {
 	int tempN = a;
 	int tempD = b;
@@ -86,6 +86,13 @@ RationalNumber::~RationalNumber()
 
 RationalNumber operator+(const RationalNumber & a, const RationalNumber & b)
 {
+	RationalNumber temp;
+	int tempLD = a.getDenominator();
+	int tempRD = b.getDenominator();
+	simplifyF(tempLD, tempRD);
+	temp.setDenominator(a.getDenominator() * tempRD);
+	temp.setNumerator(a.getNumerator() * tempRD + b.getNumerator() * tempLD);
+	temp.simplify();
 	return RationalNumber();
 }
 

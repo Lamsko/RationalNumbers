@@ -35,12 +35,13 @@ public:
 	RationalNumber& operator-() const;
 
 	void setNumerator(int num);
-	void getNumerator() const;
-	void setDenumerator(int den);
-	void getDenumerator() const;
+	int getNumerator() const;
+	void setDenominator(int den);
+	int getDenominator() const;
 
 private:
 	int numerator;
 	int denumerator;
+	void simplify();
 };
 
