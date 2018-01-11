@@ -100,3 +100,23 @@ RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
 {
 	return RationalNumber();
 }
+
+void RationalNumber::setNumerator(int num)
+{
+	numerator = num;
+}
+
+int RationalNumber::getNumerator() const
+{
+	return numerator;
+}
+
+void RationalNumber::setDenominator(int den)
+{
+	denominator = den;
+}
+
+int RationalNumber::getDenominator() const
+{
+	return denominator;
+}

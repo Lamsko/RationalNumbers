@@ -41,7 +41,7 @@ public:
 
 private:
 	int numerator;
-	int denumerator;
+	int denominator;
 	void simplify();
 };
 
