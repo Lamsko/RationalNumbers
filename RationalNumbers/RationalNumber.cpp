@@ -166,14 +166,14 @@ bool operator!=(const RationalNumber & a, const RationalNumber & b)
 bool operator<(const RationalNumber & a, const RationalNumber & b)
 {
 	int left = a.getNumerator() * b.getDenominator();
-	int right = a.getDenominator * b.getNumerator();
+	int right = a.getDenominator() * b.getNumerator();
 	return (left < right);
 }
 
 bool operator>(const RationalNumber & a, const RationalNumber & b)
 {
 	int left = a.getNumerator() * b.getDenominator();
-	int right = a.getDenominator * b.getNumerator();
+	int right = a.getDenominator() * b.getNumerator();
 	return (left > right);
 }
 
@@ -197,10 +197,10 @@ ostream & operator<<(ostream & out, const RationalNumber & obj)
 	return out;
 }
 
-istream & operator>>(istream & in, RationalNumber & obj)
+/*istream & operator>>(istream & in, RationalNumber & obj)
 {
 	// TODO: insert return statement here
-}
+}*/
 
 void RationalNumber::setNumerator(int num)
 {

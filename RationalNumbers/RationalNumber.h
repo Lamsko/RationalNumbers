@@ -17,7 +17,7 @@ class RationalNumber
 	friend bool operator<=(const RationalNumber& a, const RationalNumber& b);
 	friend bool operator>=(const RationalNumber& a, const RationalNumber& b);
 	friend ostream& operator<<(ostream& out, const RationalNumber& obj);
-	friend istream& operator>>(istream& in, RationalNumber& obj);
+	//friend istream& operator>>(istream& in, RationalNumber& obj);
 
 
 
