@@ -81,6 +81,35 @@ RationalNumber::RationalNumber()
 	setDenominator(1);
 }
 
+RationalNumber::RationalNumber(double x)
+{
+	int i = 1;
+	while (x * i - static_cast<int> (x * i) != 0)
+	{
+		if (i > INT_MAX / 10)
+		{
+			cout << "Tej liczby: " << x << " nie mozna zamienic na liczbe wymierna. Jest zbyt dluga i zostala ustawiona na 0." << endl;
+			setNumerator(0);
+			setDenominator(1);
+			return;
+		}
+		else
+		{
+			i *= 10;
+		}
+	}
+	setNumerator(x*i);
+	setDenominator(i);
+	simplify();
+}
+
+
+RationalNumber::RationalNumber(int num, int den)
+{
+	setNumerator(num);
+	setDenominator(den);
+	simplify();
+}
 
 RationalNumber::~RationalNumber()
 {
@@ -150,12 +179,12 @@ bool operator>(const RationalNumber & a, const RationalNumber & b)
 
 bool operator<=(const RationalNumber & a, const RationalNumber & b)
 {
-	return ( (a < b) || (a == b));
+	return ((a < b) || (a == b));
 }
 
 bool operator>=(const RationalNumber & a, const RationalNumber & b)
 {
-	return ( (a > b) || (a == b));
+	return ((a > b) || (a == b));
 }
 
 ostream & operator<<(ostream & out, const RationalNumber & obj)
