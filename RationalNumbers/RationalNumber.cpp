@@ -115,6 +115,61 @@ RationalNumber::~RationalNumber()
 {
 }
 
+RationalNumber & RationalNumber::operator=(const RationalNumber & obj)
+{
+	setNumerator(obj.getNumerator());
+	setDenominator(obj.getDenominator());
+	return *this;
+}
+
+RationalNumber & RationalNumber::operator+=(const RationalNumber & obj)
+{
+	*this = *this + obj;
+	return *this;
+}
+
+RationalNumber & RationalNumber::operator-=(const RationalNumber & obj)
+{
+	*this = *this - obj;
+	return *this;
+}
+
+RationalNumber & RationalNumber::operator*=(const RationalNumber & obj)
+{
+	*this = *this * obj;
+	return *this;
+}
+
+RationalNumber & RationalNumber::operator/=(const RationalNumber & obj)
+{
+	*this = *this / obj;
+	return *this;
+}
+
+RationalNumber & RationalNumber::operator++()
+{
+	*this = *this + 1;
+	return *this;
+}
+
+RationalNumber & RationalNumber::operator--()
+{
+	*this = *this - 1;
+	return *this;
+}
+
+RationalNumber RationalNumber::operator+() const
+{
+	return *this;
+}
+
+RationalNumber RationalNumber::operator-() const
+{
+	RationalNumber temp;
+	temp.setNumerator(-getNumerator());
+	temp.setDenominator(-getDenominator());
+}
+
 RationalNumber operator+(const RationalNumber & a, const RationalNumber & b)
 {
 	RationalNumber temp;
@@ -127,10 +182,10 @@ RationalNumber operator+(const RationalNumber & a, const RationalNumber & b)
 	return temp;
 }
 
-/*RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
+RationalNumber operator-(const RationalNumber & a, const RationalNumber & b)
 {
 	return (a + (-b));
-}*/
+}
 
 RationalNumber operator*(const RationalNumber & a, const RationalNumber & b)
 {
