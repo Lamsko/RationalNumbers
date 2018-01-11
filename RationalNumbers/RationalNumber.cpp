@@ -122,6 +122,16 @@ RationalNumber operator/(const RationalNumber & a, const RationalNumber & b)
 	return temp_1 * temp_2;
 }
 
+bool operator==(const RationalNumber & a, const RationalNumber & b)
+{
+	return (a.numerator == b.numerator && a.denominator == b.denominator);
+}
+
+bool operator!=(const RationalNumber & a, const RationalNumber & b)
+{
+	return !(a == b);
+}
+
 void RationalNumber::setNumerator(int num)
 {
 	numerator = num;
