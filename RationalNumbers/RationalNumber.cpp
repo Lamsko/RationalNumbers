@@ -132,6 +132,30 @@ bool operator!=(const RationalNumber & a, const RationalNumber & b)
 	return !(a == b);
 }
 
+bool operator<(const RationalNumber & a, const RationalNumber & b)
+{
+	int left = a.getNumerator() * b.getDenominator();
+	int right = a.getDenominator * b.getNumerator();
+	return (left < right);
+}
+
+bool operator>(const RationalNumber & a, const RationalNumber & b)
+{
+	int left = a.getNumerator() * b.getDenominator();
+	int right = a.getDenominator * b.getNumerator();
+	return (left > right);
+}
+
+bool operator<=(const RationalNumber & a, const RationalNumber & b)
+{
+	return ( (a < b) || (a == b));
+}
+
+bool operator>=(const RationalNumber & a, const RationalNumber & b)
+{
+	return ( (a > b) || (a == b));
+}
+
 void RationalNumber::setNumerator(int num)
 {
 	numerator = num;
