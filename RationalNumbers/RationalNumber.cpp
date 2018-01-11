@@ -168,6 +168,7 @@ RationalNumber RationalNumber::operator-() const
 	RationalNumber temp;
 	temp.setNumerator(-getNumerator());
 	temp.setDenominator(-getDenominator());
+	return temp;
 }
 
 RationalNumber operator+(const RationalNumber & a, const RationalNumber & b)
